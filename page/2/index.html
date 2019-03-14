@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue+webpack项目搭建 | LG&#39;s RPG</title>
+  <title>LG&#39;s RPG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="环境搭建安装node(node集成了npm)查看版本:1node -v">
-<meta name="keywords" content="vue.js,webpack,bootstrap">
-<meta property="og:type" content="article">
-<meta property="og:title" content="vue+webpack项目搭建">
-<meta property="og:url" content="http://yoursite.com/2018/06/12/ue-webpack项目搭建/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="LG&#39;s RPG">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="LG&#39;s RPG">
-<meta property="og:description" content="环境搭建安装node(node集成了npm)查看版本:1node -v">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-02T10:55:21.087Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue+webpack项目搭建">
-<meta name="twitter:description" content="环境搭建安装node(node集成了npm)查看版本:1node -v">
+<meta name="twitter:title" content="LG&#39;s RPG">
   
     <link rel="alternative" href="/atom.xml" title="LG&#39;s RPG" type="application/atom+xml">
   
@@ -149,42 +144,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ue-webpack项目搭建" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-layui时间插件联动" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      vue+webpack项目搭建
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/08/layui时间插件联动/">layui时间插件联动</a>
     </h1>
   
 
         
-        <a href="/2018/06/12/ue-webpack项目搭建/" class="archive-article-date">
-  	<time datetime="2018-06-12T04:16:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-12</time>
+        <a href="/2018/06/08/layui时间插件联动/" class="archive-article-date">
+  	<time datetime="2018-06-08T09:32:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>安装node(node集成了npm)<br>查看版本:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<h2 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h2><p>全局安装 vue-cli :<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install –global vue-cli</span><br></pre></td></tr></table></figure></p>
-<p>创建一个基于 webpack 模板的新项目 :<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack my-project</span><br></pre></td></tr></table></figure></p>
-<p>安装依赖,启动项目:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> my-project </span><br><span class="line">npm install </span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure></p>
-<h2 id="项目中导入bootstrap"><a href="#项目中导入bootstrap" class="headerlink" title="项目中导入bootstrap"></a>项目中导入bootstrap</h2><p>先导入jquery:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install jquery --save-dev</span><br></pre></td></tr></table></figure></p>
-<p>在build/webpack.base.conf.js文件中配置:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const webpack = require(<span class="string">'webpack'</span>)</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">  new webpack.optimize.CommonsChunkPlugin(<span class="string">'common.js'</span>),</span><br><span class="line">  new webpack.ProvidePlugin(&#123;</span><br><span class="line">    $: <span class="string">"jquery"</span>,</span><br><span class="line">    jQuery: <span class="string">"jquery"</span>,</span><br><span class="line">    <span class="string">"windows.jQuery"</span>: <span class="string">"jquery"</span></span><br><span class="line">  &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>在main.js中加入:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import $ from <span class="string">'jquery'</span></span><br></pre></td></tr></table></figure></p>
-<p>将bootstrap文件放到assets文件夹中</p>
-<p></p><p>在main.js中导入:</p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import <span class="string">'./assets/css/bootstrap.min.css'</span>  </span><br><span class="line">import <span class="string">'./assets/js/bootstrap.min.js'</span></span><br></pre></td></tr></table></figure><p></p>
-<p>最后测试即可</p>
-<blockquote>
-<p>推荐使用elementUI</p>
-</blockquote>
-
+        <p>实现效果:</p>
+<p><img src="/2018/06/08/layui时间插件联动/date.png" alt="date"><br></p>
+        
+          <a class="article-more-a" href="/2018/06/08/layui时间插件联动/#more">more >></a>
+        
       
 
       
@@ -197,15 +183,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vue.js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">layui</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bootstrap</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">时间插件</a>
         		</li>
       		
 		</ul>
@@ -214,33 +196,16 @@
       
 
       
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/08/layui时间插件联动/">展开全文 >></a>
+        </p>
+      
 
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/06/24/vuex进行组件传值/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          使用vuex进行组件传值
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/06/08/layui时间插件联动/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">layui时间插件联动</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -260,14 +225,119 @@
 
 
 
-  
-  
-  
 
   
-
+    <article id="post-githubpage-hexo搭建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/18/githubpage-hexo搭建个人博客/">githubpage+hexo搭建个人博客</a>
+    </h1>
   
 
+        
+        <a href="/2018/02/18/githubpage-hexo搭建个人博客/" class="archive-article-date">
+  	<time datetime="2018-02-18T02:58:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>如果你是新手并且想搭建自己的博客,看到这篇文章后先不要管hexo,git,Github Page,node等专业术语,跟着这篇文章搭建好自己的博客后相信你会对他们有所理解.</p>
+</blockquote>
+<h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1.准备工作"></a>1.准备工作</h2><ul>
+<li>注册一个Github账号：<a href="https://github.com/" target="_blank" rel="noopener">官网</a></li>
+</ul>
+<ul>
+<li>Git：Git<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">下载</a>安装程序.(建议安装最新版本,安装过程点下一步就行了,同下)</li>
+</ul>
+<ul>
+<li>Node.js：通过Node.js<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">下载</a>安装程序</li>
+</ul>
+        
+          <a class="article-more-a" href="/2018/02/18/githubpage-hexo搭建个人博客/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">node.js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">githubPage</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/02/18/githubpage-hexo搭建个人博客/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -290,8 +360,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

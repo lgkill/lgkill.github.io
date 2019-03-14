@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue+webpack项目搭建 | LG&#39;s RPG</title>
+  <title>关于rem的思考 | LG&#39;s RPG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="环境搭建安装node(node集成了npm)查看版本:1node -v">
-<meta name="keywords" content="vue.js,webpack,bootstrap">
+  <meta name="description" content="rem与emrem是基于html元素的字体大小来决定(根元素的字体大小由浏览器决定,用户可以自己设定)，而em则根据使用它的元素的大小决定（很多人错误以为是根据父类元素，实际上是使用它的元素继承了父类的属性才会产生的错觉）">
+<meta name="keywords" content="rem,em,media">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue+webpack项目搭建">
-<meta property="og:url" content="http://yoursite.com/2018/06/12/ue-webpack项目搭建/index.html">
+<meta property="og:title" content="关于rem的思考">
+<meta property="og:url" content="http://yoursite.com/2019/03/10/rem的思考/index.html">
 <meta property="og:site_name" content="LG&#39;s RPG">
-<meta property="og:description" content="环境搭建安装node(node集成了npm)查看版本:1node -v">
+<meta property="og:description" content="rem与emrem是基于html元素的字体大小来决定(根元素的字体大小由浏览器决定,用户可以自己设定)，而em则根据使用它的元素的大小决定（很多人错误以为是根据父类元素，实际上是使用它的元素继承了父类的属性才会产生的错觉）">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-02T10:55:21.087Z">
+<meta property="og:updated_time" content="2019-03-10T14:12:56.847Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue+webpack项目搭建">
-<meta name="twitter:description" content="环境搭建安装node(node集成了npm)查看版本:1node -v">
+<meta name="twitter:title" content="关于rem的思考">
+<meta name="twitter:description" content="rem与emrem是基于html元素的字体大小来决定(根元素的字体大小由浏览器决定,用户可以自己设定)，而em则根据使用它的元素的大小决定（很多人错误以为是根据父类元素，实际上是使用它的元素继承了父类的属性才会产生的错觉）">
   
     <link rel="alternative" href="/atom.xml" title="LG&#39;s RPG" type="application/atom+xml">
   
@@ -149,41 +149,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ue-webpack项目搭建" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-rem的思考" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue+webpack项目搭建
+      关于rem的思考
     </h1>
   
 
         
-        <a href="/2018/06/12/ue-webpack项目搭建/" class="archive-article-date">
-  	<time datetime="2018-06-12T04:16:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-12</time>
+        <a href="/2019/03/10/rem的思考/" class="archive-article-date">
+  	<time datetime="2019-03-10T11:09:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>安装node(node集成了npm)<br>查看版本:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<h2 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h2><p>全局安装 vue-cli :<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install –global vue-cli</span><br></pre></td></tr></table></figure></p>
-<p>创建一个基于 webpack 模板的新项目 :<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack my-project</span><br></pre></td></tr></table></figure></p>
-<p>安装依赖,启动项目:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> my-project </span><br><span class="line">npm install </span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure></p>
-<h2 id="项目中导入bootstrap"><a href="#项目中导入bootstrap" class="headerlink" title="项目中导入bootstrap"></a>项目中导入bootstrap</h2><p>先导入jquery:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install jquery --save-dev</span><br></pre></td></tr></table></figure></p>
-<p>在build/webpack.base.conf.js文件中配置:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const webpack = require(<span class="string">'webpack'</span>)</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">  new webpack.optimize.CommonsChunkPlugin(<span class="string">'common.js'</span>),</span><br><span class="line">  new webpack.ProvidePlugin(&#123;</span><br><span class="line">    $: <span class="string">"jquery"</span>,</span><br><span class="line">    jQuery: <span class="string">"jquery"</span>,</span><br><span class="line">    <span class="string">"windows.jQuery"</span>: <span class="string">"jquery"</span></span><br><span class="line">  &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>在main.js中加入:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import $ from <span class="string">'jquery'</span></span><br></pre></td></tr></table></figure></p>
-<p>将bootstrap文件放到assets文件夹中</p>
-<p></p><p>在main.js中导入:</p><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import <span class="string">'./assets/css/bootstrap.min.css'</span>  </span><br><span class="line">import <span class="string">'./assets/js/bootstrap.min.js'</span></span><br></pre></td></tr></table></figure><p></p>
-<p>最后测试即可</p>
-<blockquote>
-<p>推荐使用elementUI</p>
-</blockquote>
+        <h2 id="rem与em"><a href="#rem与em" class="headerlink" title="rem与em"></a>rem与em</h2><p>rem是基于html元素的字体大小来决定(根元素的字体大小由浏览器决定,用户可以自己设定)，而em则根据使用它的元素的大小决定（很多人错误以为是根据父类元素，实际上是使用它的元素继承了父类的属性才会产生的错觉）<br><a id="more"></a><br><strong>rem用法:</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>&#123; <span class="attribute">font-size</span>: <span class="number">16px</span>; &#125;</span><br><span class="line">  <span class="selector-class">.box</span>&#123; <span class="attribute">width</span>: <span class="number">1rem</span>; &#125; <span class="comment">/* 即宽度为16px */</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>em用法:</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123; <span class="attribute">font-size</span>:<span class="number">16px</span>; <span class="attribute">width</span>: <span class="number">1rem</span>; &#125; <span class="comment">/* 即宽度为16px */</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="rem的通常用法"><a href="#rem的通常用法" class="headerlink" title="rem的通常用法"></a>rem的通常用法</h2><p><strong>配合vw/vh使用:</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>&#123; <span class="attribute">font-size</span>: <span class="number">2vw</span>; &#125; <span class="comment">/* 视口宽度的2% */</span></span><br><span class="line">  <span class="selector-tag">h1</span>&#123; <span class="attribute">font-size</span>:<span class="number">2rem</span>; &#125; <span class="comment">/* 2vw*2=4vw */</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>配合calc使用:</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>&#123; <span class="attribute">font-size</span>: <span class="built_in">calc</span>(1em + 1vw); &#125; <span class="comment">/* calc动态计算 */</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>配合媒体查询使用:(推荐)</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span> &#123;</span><br><span class="line">    <span class="attribute">font-size </span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">401px</span>)&#123;</span><br><span class="line">    <span class="selector-tag">html</span> &#123;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">25px</span> <span class="meta">!important</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">428px</span>)&#123;</span><br><span class="line">    <span class="selector-tag">html</span> &#123;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">26.75px</span> <span class="meta">!important</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">481px</span>)&#123;</span><br><span class="line">    <span class="selector-tag">html</span> &#123;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">30px</span> <span class="meta">!important</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">569px</span>)&#123;</span><br><span class="line">    <span class="selector-tag">html</span> &#123;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">35px</span> <span class="meta">!important</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">641px</span>)&#123;</span><br><span class="line">    <span class="selector-tag">html</span> &#123;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">40px</span> <span class="meta">!important</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="http://caibaojian.com/simple-flexible.html" target="_blank" rel="noopener">Rem自适应js之精简版flexible.js(通过js来实现媒体查询)</a></p>
 
       
 
@@ -197,15 +188,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vue.js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">rem</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">em</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bootstrap</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">media</a>
         		</li>
       		
 		</ul>
@@ -224,18 +215,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/06/24/vuex进行组件传值/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/11/meta-标签的一些用法/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          使用vuex进行组件传值
+          &lt;meta&gt;标签的一些用法
         
       </div>
     </a>
   
   
-    <a href="/2018/06/08/layui时间插件联动/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">layui时间插件联动</div>
+    <a href="/2018/07/01/pc端和移动端的兼容性问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">pc端和移动端的兼容性问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
