@@ -17,7 +17,7 @@
 <meta property="og:description" content="1.click点击事件  移动端使用 tap或touch事件来替代click点透事件:当点击了链接后会触发A,B绑定的事件,这种现象称为点透事件">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2018/07/01/pc端和移动端的兼容性问题/touch.jpg">
-<meta property="og:updated_time" content="2019-03-14T15:31:55.661Z">
+<meta property="og:updated_time" content="2019-04-06T15:21:24.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pc端和移动端的兼容性问题">
 <meta name="twitter:description" content="1.click点击事件  移动端使用 tap或touch事件来替代click点透事件:当点击了链接后会触发A,B绑定的事件,这种现象称为点透事件">
@@ -187,6 +187,9 @@
 <p><strong>8.手机,微信</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">     判断是否来自微信浏览器</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">function</span> <span class="title">isFromWeiXin</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">         <span class="keyword">var</span> ua = navigator.userAgent.toLowerCase();</span><br><span class="line">         <span class="keyword">if</span> (ua.match(<span class="regexp">/MicroMessenger/i</span>) == <span class="string">"micromessenger"</span>) &#123;</span><br><span class="line">             <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     判断手机的类型</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> user=<span class="string">""</span>;</span><br><span class="line">     <span class="keyword">if</span> (<span class="regexp">/android/i</span>.test(navigator.userAgent))&#123;</span><br><span class="line">　　      <span class="comment">//  android</span></span><br><span class="line">         user=<span class="string">"1"</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">if</span> (<span class="regexp">/ipad|iphone|mac/i</span>.test(navigator.userAgent))&#123;</span><br><span class="line">         <span class="comment">//  ios</span></span><br><span class="line">         user=<span class="string">"0"</span>;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>9.手机不兼容rgb()</strong></p>
 <p>华为手机,苹果:background:rgb(0,0,0,0.8);没有效果;</p>
+<p>**10.positoin：fiexd；top：0px；手机端滑动屏幕时定位的div会跟着移动</p>
+<p>-webkit-transform: translateZ(0);  可以通过translateZ()来改变元素的层叠顺序，其值越大，越在顶层，离屏幕越近。</p>
+<p><strong> 11.移动端背景图颜色变浅 </strong><br>暂未找到解决方案</p>
 <blockquote>
 <p>待补充</p>
 </blockquote>
@@ -359,14 +362,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">axios</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -391,6 +386,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">layui</a>
               </li>
              
@@ -399,11 +402,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">meta</a>
+                <a href="javascript:void(0)" class="js-tag color4">兼容性</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">兼容性</a>
+                <a href="javascript:void(0)" class="js-tag color5">meta</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -419,11 +422,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+                <a href="javascript:void(0)" class="js-tag color1">element-ui</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">element-ui</a>
+                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -439,7 +442,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">vuex</a>
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ps</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -451,19 +466,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ps</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">animation</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">滑动事件</a>
               </li>
             
             <div class="clearfix"></div>
